@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STRIVEN | Engineered For Performance | Men's Athletic Apparel</title>
+    <meta name="description" content="STRIVEN Egypt - High-performance men's athletic apparel, gymwear and heavyweight streetwear.">
+    <meta name="theme-color" content="#0A0A0C">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            neon: '#CCFF00',
+                            neonHover: '#b3e600',
+                            dark: '#0A0A0C',
+                            card: '#141418',
+                            cardHover: '#1c1c22',
+                            border: '#26262e',
+                            gray: '#8E8E93'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-glow': '0 0 20px rgba(204, 255, 0, 0.35)',
+                        'neon-glow-lg': '0 0 35px rgba(204, 255, 0, 0.55)',
+                        'neon-sm': '0 0 10px rgba(204, 255, 0, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased selection:bg-brand-neon selection:text-black">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-neon text-black text-xs md:text-sm font-bold py-2 px-4 text-center tracking-wider uppercase flex items-center justify-center gap-2">
+        <i class="fa-solid fa-bolt text-xs text-black"></i>
+
+        <span>
+            EGYPT-WIDE EXPRESS DELIVERY |
+            CASH ON DELIVERY AVAILABLE |
+            FREE SHIPPING ON ORDERS OVER 1500 EGP
+        </span>
+
+        <i class="fa-solid fa-bolt text-xs text-black"></i>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav
+        class="sticky top-0 z-40 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border transition-all duration-300"
+        id="navbar"
+    >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+
+                <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black p-1 rounded border border-brand-border group-hover:border-brand-neon transition-colors duration-300">
+
+                    <svg
+                        viewBox="0 0 100 100"
+                        class="w-full h-full text-brand-neon fill-current filter drop-shadow-[0_0_8px_rgba(204,255,0,0.6)]"
+                    >
+                        <polygon points="15,30 88,18 39,34 52,34 27,47 81,57 63,65 31,71 88,82 11,82 61,61 38,61 73,42 18,30" />
+                    </svg>
+
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="font-display text-2xl md:text-3xl font-black tracking-tighter italic text-white group-hover:text-brand-neon transition-colors">
+                        STRIVEN
+                    </span>
+
+                    <span class="text-[9px] tracking-[0.3em] text-brand-neon -mt-1 font-semibold uppercase">
+                        EGYPT
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-8 font-medium text-sm tracking-wide uppercase">
+
+                <a href="#hero" class="text-white hover:text-brand-neon transition-colors py-1">
+                    Home
+                </a>
+
+                <a href="#shop" class="text-gray-300 hover:text-brand-neon transition-colors py-1">
+                    Shop Collection
+                </a>
+
+                <a href="#about" class="text-gray-300 hover:text-brand-neon transition-colors py-1">
+                    Tech & Fabric
+                </a>
+
+                <a
+                    href="#size-guide"
+                    onclick="openSizeModal(); return false;"
+                    class="text-gray-300 hover:text-brand-neon transition-colors py-1"
+                >
+                    Size Guide
+                </a>
+
+                <a href="#contact" class="text-gray-300 hover:text-brand-neon transition-colors py-1">
+                    Contact
+                </a>
+
+            </div>
+
+            <!-- Header Controls -->
+            <div class="flex items-center gap-3 md:gap-5">
+
+                <!-- Search -->
+                <button
+                    onclick="toggleSearchModal()"
+                    aria-label="Search"
+                    class="p-2 text-gray-300 hover:text-brand-neon transition-colors"
+                >
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+
+                <!-- Wishlist -->
+                <button
+                    onclick="toggleWishlistModal()"
+                    aria-label="Wishlist"
+                    class="p-2 text-gray-300 hover:text-brand-neon transition-colors relative"
+                >
+                    <i class="fa-regular fa-heart text-xl"></i>
+
+                    <span
+                        id="wishlist-badge"
+                        class="hidden absolute -top-1 -right-1 bg-brand-neon text-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center"
+                    >
+                        0
+                    </span>
+                </button>
+
+                <!-- Cart -->
+                <button
+                    onclick="toggleCartDrawer()"
+                    aria-label="Shopping Cart"
+                    class="p-2 text-gray-300 hover:text-brand-neon transition-colors relative"
+                >
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+
+                    <span
+                        id="cart-badge"
+                        class="absolute -top-1 -right-1 bg-brand-neon text-black text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-dark"
+                    >
+                        0
+                    </span>
+                </button>
+
+                <!-- WhatsApp -->
+                <a
+                    href="https://wa.me/201211271037"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2 px-3.5 rounded-full transition-colors border border-emerald-400/30"
+                >
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>WhatsApp Order</span>
+                </a>
+
+                <!-- Mobile Menu -->
+                <button
+                    onclick="toggleMobileMenu()"
+                    aria-label="Open menu"
+                    class="lg:hidden p-2 text-white hover:text-brand-neon focus:outline-none"
+                >
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+            id="mobile-menu"
+            class="hidden lg:hidden bg-brand-card border-b border-brand-border px-6 py-6 space-y-4"
+        >
+
+            <a
+                href="#hero"
+                onclick="toggleMobileMenu()"
+                class="block text-lg font-bold tracking-wider hover:text-brand-neon uppercase"
+            >
+                Home
+            </a>
+
+            <a
+                href="#shop"
+                onclick="toggleMobileMenu()"
+                class="block text-lg font-bold tracking-wider text-gray-300 hover:text-brand-neon uppercase"
+            >
+                Shop Collection
+            </a>
+
+            <a
+                href="#about"
+                onclick="toggleMobileMenu()"
+                class="block text-lg font-bold tracking-wider text-gray-300 hover:text-brand-neon uppercase"
+            >
+                Tech & Fabric
+            </a>
+
+            <a
+                href="#size-guide"
+                onclick="toggleMobileMenu(); openSizeModal(); return false;"
+                class="block text-lg font-bold tracking-wider text-gray-300 hover:text-brand-neon uppercase"
+            >
+                Size Calculator
+            </a>
+
+            <a
+                href="#contact"
+                onclick="toggleMobileMenu()"
+                class="block text-lg font-bold tracking-wider text-gray-300 hover:text-brand-neon uppercase"
+            >
+                Contact Us
+            </a>
+
+            <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+
+                <a
+                    href="https://wa.me/201211271037"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full bg-emerald-600 text-white text-center font-bold py-3 rounded-lg flex items-center justify-center gap-2"
+                >
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Quick Order: 01211271037</span>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section
+        id="hero"
+        class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-grid-pattern pt-8 pb-16"
+    >
+
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-neon/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="absolute bottom-10 right-10 w-72 h-72 bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center">
+
+            <!-- Hero Text -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-border text-brand-neon text-xs font-bold tracking-widest uppercase shadow-neon-sm">
+                    <i class="fa-solid fa-fire text-brand-neon"></i>
+                    EGYPT'S NEXT-GEN GYMWEAR BRAND
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl xl:text-7xl font-black italic tracking-tight font-display uppercase leading-none">
+                    PUSH BEYOND
+                    <br>
+
+                    <span class="text-brand-neon filter drop-shadow-[0_0_15px_rgba(204,255,0,0.4)]">
+                        ALL LIMITS
+                    </span>
+                </h1>
+
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Engineered for high-intensity training and premium lifestyle performance.
+                    Superior moisture-wicking technology, high-grade heavyweight Egyptian cotton
+                    blends, and anatomical fit designed for athletes in Egypt.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+
+                    <a
+                        href="#shop"
+                        class="w-full sm:w-auto px-8 py-4 bg-brand-neon text-black font-extrabold uppercase tracking-wider rounded text-sm hover:bg-brand-neonHover transition-all shadow-neon-glow hover:shadow-neon-glow-lg flex items-center justify-center gap-3 group"
+                    >
+                        <span>EXPLORE COLLECTION</span>
+
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+
+                    <a
+                        href="https://wa.me/201211271037?text=Hello%20STRIVEN,%20I%20want%20to%20order%20from%20your%20collection!"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full sm:w-auto px-8 py-4 bg-brand-card hover:bg-brand-cardHover border border-brand-border text-white font-bold uppercase tracking-wider rounded text-sm transition-all flex items-center justify-center gap-3"
+                    >
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                        <span>WhatsApp Quick Order</span>
+                    </a>
+
+                </div>
+
+                <!-- Highlights -->
+                <div class="pt-8 grid grid-cols-3 gap-4 border-t border-brand-border/60 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+
+                    <div>
+                        <p class="text-2xl font-black font-display text-white">100%</p>
+                        <p class="text-xs text-gray-400 font-medium">
+                            Egyptian Athletic Quality
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-2xl font-black font-display text-brand-neon">
+                            48 HR
+                        </p>
+                        <p class="text-xs text-gray-400 font-medium">
+                            Fast Cairo & EG Delivery
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-2xl font-black font-display text-white">
+                            4.9 ★
+                        </p>
+                        <p class="text-xs text-gray-400 font-medium">
+                            Athlete Rated Gear
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="lg:col-span-5 flex justify-center">
+
+                <div class="relative w-full max-w-md aspect-square bg-gradient-to-br from-brand-card via-black to-brand-card rounded-2xl border border-brand-border/80 p-8 flex flex-col items-center justify-center shadow-2xl group hover:border-brand-neon/60 transition-all duration-500">
+
+                    <div class="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-brand-neon"></div>
+                    <div class="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-brand-neon"></div>
+                    <div class="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-brand-neon"></div>
+                    <div class="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-brand-neon"></div>
+
+                    <div class="w-48 h-48 relative flex items-center justify-center mb-6">
+
+                        <div class="absolute inset-0 bg-brand-neon/20 rounded-full blur-2xl group-hover:bg-brand-neon/35 transition-all"></div>
+
+                        <svg
+                            viewBox="0 0 100 100"
+                            class="w-full h-full text-brand-neon fill-current relative z-10 filter drop-shadow-[0_0_15px_rgba(204,255,0,0.8)]"
+                        >
+                            <polygon points="15,30 88,18 39,34 52,34 27,47 81,57 63,65 31,71 88,82 11,82 61,61 38,61 73,42 18,30" />
+                        </svg>
+
+                    </div>
+
+                    <h2 class="font-display text-3xl font-black italic tracking-wider text-white text-center uppercase">
+                        STRIVEN
+                    </h2>
+
+                    <p class="text-brand-neon text-xs font-bold tracking-[0.4em] uppercase mt-1">
+                        PERFORMANCE WEAR
+                    </p>
+
+                    <div class="mt-6 px-4 py-2 bg-brand-dark/80 rounded-full border border-brand-border text-xs text-gray-300 font-medium">
+                        #PushedByStriven • Egypt
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SHOP -->
+    <section
+        id="shop"
+        class="py-20 bg-black/60 border-t border-brand-border relative"
+    >
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+
+                <div>
+                    <span class="text-brand-neon text-xs font-bold tracking-widest uppercase">
+                        CATALOG 2026
+                    </span>
+
+                    <h2 class="text-3xl md:text-5xl font-black font-display italic uppercase tracking-tight text-white mt-1">
+                        FEATURED GEAR
+                    </h2>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 mt-6 md:mt-0 no-scrollbar">
+
+                    <button
+                        onclick="filterCategory('all', this)"
+                        class="cat-btn active px-4 py-2 rounded text-xs font-bold tracking-wider uppercase border border-brand-neon bg-brand-neon text-black transition-all"
+                    >
+                        All Items
+                    </button>
+
+                    <button
+                        onclick="filterCategory('oversized', this)"
+                        class="cat-btn px-4 py-2 rounded text-xs font-bold tracking-wider uppercase border border-brand-border bg-brand-card text-gray-300 hover:border-brand-neon hover:text-white transition-all"
+                    >
+                        Oversized Tees
+                    </button>
+
+                    <button
+                        onclick="filterCategory('hoodies', this)"
+                        class="cat-btn px-4 py-2 rounded text-xs font-bold tracking-wider uppercase border border-brand-border bg-brand-card text-gray-300 hover:border-brand-neon hover:text-white transition-all"
+                    >
+                        Hoodies
+                    </button>
+
+                    <button
+                        onclick="filterCategory('shorts', this)"
+                        class="cat-btn px-4 py-2 rounded text-xs font-bold tracking-wider uppercase border border-brand-border bg-brand-card text-gray-300 hover:border-brand-neon hover:text-white transition-all"
+                    >
+                        Gym Shorts
+                    </button>
+
+                    <button
+                        onclick="filterCategory('compression', this)"
+                        class="cat-btn px-4 py-2 rounded text-xs font-bold tracking-wider uppercase border border-brand-border bg-brand-card text-gray-300 hover:border-brand-neon hover:text-white transition-all"
+                    >
+                        Compression
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Products -->
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                id="products-grid"
+            ></div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section
+        id="about"
+        class="py-20 bg-brand-dark border-t border-brand-border relative overflow-hidden"
+    >
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <div class="space-y-6">
+
+                    <span class="text-brand-neon text-xs font-bold tracking-widest uppercase">
+                        THE STRIVEN STANDARD
+                    </span>
+
+                    <h2 class="text-3xl sm:text-5xl font-black font-display italic uppercase tracking-tight text-white">
+                        CRAFTED FOR UNCOMPROMISING ATHLETES
+                    </h2>
+
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        STRIVEN was created in Egypt to address the needs of serious bodybuilders
+                        and high-performance athletes. Every garment is constructed with high-density
+                        fibers, heavy GSM cotton, and ergonomic tailored patterns.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+
+                        <div class="p-4 bg-brand-card rounded-lg border border-brand-border flex items-start gap-4">
+
+                            <div class="w-10 h-10 rounded bg-brand-neon/10 flex items-center justify-center text-brand-neon flex-shrink-0">
+                                <i class="fa-solid fa-droplet-slash text-lg"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-white text-base">
+                                    Sweat-Wicking Flex Tech
+                                </h3>
+
+                                <p class="text-xs text-gray-400 mt-1">
+                                    Breathable athletic micro-channels keep you cool during intense
+                                    hypertrophy sessions and heavy lifting.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="p-4 bg-brand-card rounded-lg border border-brand-border flex items-start gap-4">
+
+                            <div class="w-10 h-10 rounded bg-brand-neon/10 flex items-center justify-center text-brand-neon flex-shrink-0">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-white text-base">
+                                    Heavyweight Egyptian Cotton
+                                </h3>
+
+                                <p class="text-xs text-gray-400 mt-1">
+                                    260–320 GSM luxury heavy cotton blends offer long-lasting shape
+                                    retention, anti-pilling, and ultra-comfortable skin feel.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="p-4 bg-brand-card rounded-lg border border-brand-border flex items-start gap-4">
+
+                            <div class="w-10 h-10 rounded bg-brand-neon/10 flex items-center justify-center text-brand-neon flex-shrink-0">
+                                <i class="fa-solid fa-ruler-combined text-lg"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-white text-base">
+                                    Athletic Drop-Shoulder Fit
+                                </h3>
+
+                                <p class="text-xs text-gray-400 mt-1">
+                                    Specially cut to accentuate shoulder breadth and upper torso taper
+                                    while leaving room for complete range of movement.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Lab -->
+                <div class="bg-gradient-to-tr from-brand-card to-black p-8 rounded-2xl border border-brand-border relative">
+
+                    <div class="text-center py-8 space-y-6">
+
+                        <div class="inline-block p-4 bg-black rounded-full border-2 border-brand-neon shadow-neon-glow">
+                            <i class="fa-solid fa-dumbbell text-4xl text-brand-neon"></i>
+                        </div>
+
+                        <h3 class="font-display text-2xl font-extrabold uppercase italic tracking-wider">
+                            STRIVEN APPAREL LAB
+                        </h3>
+
+                        <p class="text-xs text-gray-400 max-w-md mx-auto">
+                            Designed & tested in Egypt. Guaranteed to withstand heavy laundry cycles
+                            and harsh workouts without losing color depth or elasticity.
+                        </p>
+
+                        <div class="pt-4 flex justify-center gap-3">
+
+                            <button
+                                onclick="openSizeModal()"
+                                class="px-6 py-3 bg-brand-neon text-black text-xs font-extrabold uppercase rounded tracking-wider hover:bg-brand-neonHover transition-all"
+                            >
+                                Open Interactive Size Calculator
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SIZE MODAL -->
+    <div
+        id="size-modal"
+        class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+    >
+
+        <div class="bg-brand-card border border-brand-border w-full max-w-lg rounded-2xl p-6 relative">
+
+            <button
+                onclick="closeSizeModal()"
+                aria-label="Close size calculator"
+                class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="font-display text-2xl font-black italic uppercase text-brand-neon mb-2">
+                MEN'S ATHLETIC SIZE CALCULATOR
+            </h3>
+
+            <p class="text-xs text-gray-400 mb-6">
+                Enter your body metrics to find your ideal STRIVEN fit.
+            </p>
+
+            <div class="space-y-4 text-left">
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-300 mb-1">
+                        Weight (kg):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="calc-weight"
+                        placeholder="e.g. 78"
+                        class="w-full bg-brand-dark border border-brand-border rounded p-2 text-sm text-white focus:border-brand-neon outline-none"
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-300 mb-1">
+                        Height (cm):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="calc-height"
+                        placeholder="e.g. 178"
+                        class="w-full bg-brand-dark border border-brand-border rounded p-2 text-sm text-white focus:border-brand-neon outline-none"
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-300 mb-1">
+                        Fit Preference:
+                    </label>
+
+                    <select
+                        id="calc-fit"
+                        class="w-full bg-brand-dark border border-brand-border rounded p-2 text-sm text-white focus:border-brand-neon outline-none"
+                    >
+                        <option value="regular">
+                            Standard Performance Fit
+                        </option>
+
+                        <option value="oversized">
+                            Oversized / Pump Cover Fit
+                        </option>
+
+                        <option value="snug">
+                            Tight Muscle Fit
+                        </option>
+                    </select>
+                </div>
+
+                <button
+                    onclick="calculateSize()"
+                    class="w-full py-3 bg-brand-neon text-black font-extrabold uppercase rounded text-sm hover:bg-brand-neonHover transition-all"
+                >
+                    Calculate Recommended Size
+                </button>
+
+                <div
+                    id="size-result"
+                    class="hidden p-4 bg-brand-dark rounded border border-brand-neon/50 text-center"
+                >
+                    <span class="text-xs text-gray-400 block uppercase">
+                        Recommended STRIVEN Size
+                    </span>
+
+                    <span
+                        id="recommended-size-text"
+                        class="text-3xl font-black text-brand-neon font-display"
+                    >
+                        M
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div
+        id="cart-drawer"
+        class="fixed inset-0 z-50 overflow-hidden hidden"
+    >
+
+        <div
+            class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            onclick="toggleCartDrawer()"
+        ></div>
+
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+
+            <div class="w-screen max-w-md bg-brand-card border-l border-brand-border flex flex-col justify-between p-6">
+
+                <!-- Cart Header -->
+                <div class="flex items-center justify-between border-b border-brand-border pb-4">
+
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-brand-neon text-xl"></i>
+
+                        <h3 class="font-display text-xl font-extrabold italic uppercase">
+                            YOUR CART
+                        </h3>
+                    </div>
+
+                    <button
+                        onclick="toggleCartDrawer()"
+                        aria-label="Close cart"
+                        class="text-gray-400 hover:text-white text-2xl"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+                <!-- Cart Items -->
+                <div
+                    id="cart-items-list"
+                    class="my-6 space-y-4 overflow-y-auto flex-1 pr-1"
+                ></div>
+
+                <!-- Cart Footer -->
+                <div class="border-t border-brand-border pt-4 space-y-4">
+
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400 uppercase font-medium">
+                            Subtotal
+                        </span>
+
+                        <span
+                            id="cart-subtotal"
+                            class="font-bold text-white text-base"
+                        >
+                            0 EGP
+                        </span>
+                    </div>
+
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400 uppercase font-medium">
+                            Estimated Delivery (EG)
+                        </span>
+
+                        <span class="text-emerald-400 font-bold text-right">
+                            50 EGP (Free over 1500 EGP)
+                        </span>
+                    </div>
+
+                    <div class="flex justify-between items-center text-lg font-black border-t border-brand-border/60 pt-3">
+
+                        <span class="text-white uppercase font-display">
+                            TOTAL:
+                        </span>
+
+                        <span
+                            id="cart-total"
+                            class="text-brand-neon font-display"
+                        >
+                            0 EGP
+                        </span>
+
+                    </div>
+
+                    <button
+                        onclick="checkoutWhatsApp()"
+                        class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold uppercase rounded-lg text-sm tracking-wider flex items-center justify-center gap-3 transition-colors shadow-lg"
+                    >
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>CHECKOUT VIA WHATSAPP</span>
+                    </button>
+
+                    <p class="text-[11px] text-gray-400 text-center">
+                        Instant direct order pre-filled to official STRIVEN WhatsApp:
+                        <strong class="text-white">01211271037</strong>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div
+        id="search-modal"
+        class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden p-6 flex flex-col justify-start pt-20 items-center"
+    >
+
+        <button
+            onclick="toggleSearchModal()"
+            aria-label="Close search"
+            class="absolute top-6 right-6 text-white text-3xl hover:text-brand-neon"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="w-full max-w-2xl">
+
+            <h3 class="text-center text-brand-neon font-display font-black text-xl italic uppercase mb-4">
+                SEARCH STRIVEN CATALOG
+            </h3>
+
+            <div class="relative">
+
+                <input
+                    type="text"
+                    id="search-input"
+                    onkeyup="handleSearch()"
+                    placeholder="Search Oversized, Hoodies, Shorts..."
+                    class="w-full bg-brand-card border-2 border-brand-border rounded-xl p-4 text-white text-lg focus:border-brand-neon outline-none pr-12"
+                >
+
+                <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+
+            </div>
+
+            <div
+                id="search-results"
+                class="mt-6 space-y-3 max-h-96 overflow-y-auto"
+            ></div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+        id="contact"
+        class="bg-black border-t border-brand-border pt-16 pb-8"
+    >
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-brand-border/60">
+
+                <!-- Brand -->
+                <div class="space-y-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-9 h-9 bg-black border border-brand-neon rounded p-1">
+
+                            <svg
+                                viewBox="0 0 100 100"
+                                class="w-full h-full text-brand-neon fill-current"
+                            >
+                                <polygon points="15,30 88,18 39,34 52,34 27,47 81,57 63,65 31,71 88,82 11,82 61,61 38,61 73,42 18,30" />
+                            </svg>
+
+                        </div>
+
+                        <span class="font-display text-2xl font-black italic tracking-tighter text-white">
+                            STRIVEN
+                        </span>
+
+                    </div>
+
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Egypt's premier athletic apparel brand. High-performance streetwear,
+                        heavy drop-shoulder tees, and gym gear designed to withstand the toughest workouts.
+                    </p>
+
+                    <div class="flex items-center gap-3 pt-2">
+
+                        <a
+                            href="https://www.instagram.com/striven.eg/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center text-gray-300 hover:text-brand-neon hover:border-brand-neon transition-colors"
+                        >
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+
+                        <a
+                            href="https://www.facebook.com/profile.php?id=61594874496215"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                            class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center text-gray-300 hover:text-brand-neon hover:border-brand-neon transition-colors"
+                        >
+                            <i class="fa-brands fa-facebook-f text-lg"></i>
+                        </a>
+
+                        <a
+                            href="https://wa.me/201211271037"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="WhatsApp"
+                            class="w-10 h-10 rounded bg-brand-card border border-brand-border flex items-center justify-center text-emerald-400 hover:border-emerald-400 transition-colors"
+                        >
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="space-y-3">
+
+                    <h4 class="text-white font-bold text-sm font-display tracking-wider uppercase border-l-2 border-brand-neon pl-2">
+                        Navigation
+                    </h4>
+
+                    <ul class="space-y-2 text-xs text-gray-400">
+
+                        <li>
+                            <a href="#hero" class="hover:text-brand-neon transition-colors">
+                                Home Page
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#shop" class="hover:text-brand-neon transition-colors">
+                                New Drops 2026
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#about" class="hover:text-brand-neon transition-colors">
+                                Fabric Specifications
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="#size-guide"
+                                onclick="openSizeModal(); return false;"
+                                class="hover:text-brand-neon transition-colors"
+                            >
+                                Fit Guide & Calculator
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-3">
+
+                    <h4 class="text-white font-bold text-sm font-display tracking-wider uppercase border-l-2 border-brand-neon pl-2">
+                        Contact & Orders
+                    </h4>
+
+                    <ul class="space-y-2 text-xs text-gray-400">
+
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+
+                            <a
+                                href="https://wa.me/201211271037"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-white"
+                            >
+                                WhatsApp: 01211271037
+                            </a>
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-neon text-sm"></i>
+                            <span>Cairo / Alexandria, Egypt</span>
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-truck text-brand-neon text-sm"></i>
+                            <span>Shipping across all EG Governorates</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="space-y-3">
+
+                    <h4 class="text-white font-bold text-sm font-display tracking-wider uppercase border-l-2 border-brand-neon pl-2">
+                        Join Striven Club
+                    </h4>
+
+                    <p class="text-xs text-gray-400">
+                        Get early access to limited edition drops & exclusive discount codes.
+                    </p>
+
+                    <form
+                        onsubmit="subscribeNewsletter(event)"
+                        class="space-y-2"
+                    >
+
+                        <input
+                            type="email"
+                            placeholder="Your Email Address"
+                            required
+                            class="w-full bg-brand-card border border-brand-border rounded p-2 text-xs text-white outline-none focus:border-brand-neon"
+                        >
+
+                        <button
+                            type="submit"
+                            class="w-full py-2 bg-brand-neon text-black font-extrabold text-xs uppercase rounded hover:bg-brand-neonHover transition-colors"
+                        >
+                            Subscribe
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+
+                <p>
+                    &copy; 2026 STRIVEN EG. All Rights Reserved.
+                    Engineered for Performance.
+                </p>
+
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+
+                    <span>Payment Methods:</span>
+
+                    <span class="text-gray-300 font-bold">
+                        <i class="fa-solid fa-money-bill-wave text-emerald-400 mr-1"></i>
+                        Cash on Delivery
+                    </span>
+
+                    <span class="text-gray-300 font-bold">
+                        <i class="fa-solid fa-mobile-screen text-brand-neon mr-1"></i>
+                        InstaPay / Vodafone Cash
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a
+        href="https://wa.me/201211271037?text=Hello%20STRIVEN,%20I%20have%20a%20question!"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="fixed bottom-6 right-6 z-40 bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl hover:bg-emerald-400 hover:scale-110 transition-all flex items-center justify-center group"
+        aria-label="WhatsApp Support"
+    >
+
+        <span class="absolute right-full mr-3 bg-brand-card text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-brand-border whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+            Chat on WhatsApp (01211271037)
+        </span>
+
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
